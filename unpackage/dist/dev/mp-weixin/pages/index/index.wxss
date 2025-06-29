@@ -1,9 +1,10 @@
 
 .no-label {
-	  display: none !important; /* 隐藏 label */
-	  height: 0 !important;
-	  padding: 0 !important;
-	  margin: 0 !important;
+		display: none !important;
+		/* 隐藏 label */
+		height: 0 !important;
+		padding: 0 !important;
+		margin: 0 !important;
 }
 .table-container {
 		border: 1px solid #ddd;
@@ -27,6 +28,7 @@
 .tiji {
 		display: flex;
 		justify-content: space-around;
+		align-items: center;
 }
 .form-container {
 		margin: 20rpx;
@@ -39,7 +41,7 @@
 }
 .form-item text {
 		display: block;
-		margin-bottom: 5px;
+		mpadding-bottom: 5px;
 }
 .form-item input,
 	.picker {
@@ -48,7 +50,7 @@
 		border-radius: 4px;
 		background: white;
 }
-input{
+input {
 		border: 1px solid #ddd;
 }
 .res {
@@ -97,4 +99,8 @@ input{
 		font-size: 26rpx;
 		color: #000;
 		padding-bottom: 100rpx;
+}
+.uni-forms-item {
+		/* margin-bottom: 0 !important; */
+		/* padding-bottom: 20rpx; */
 }

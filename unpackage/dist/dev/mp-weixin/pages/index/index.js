@@ -17092,13 +17092,15 @@ const getValueByRange = (data, inputNumber) => {
 };
 if (!Array) {
   const _easycom_uni_forms_item2 = common_vendor.resolveComponent("uni-forms-item");
+  const _easycom_uni_icons2 = common_vendor.resolveComponent("uni-icons");
   const _easycom_uni_forms2 = common_vendor.resolveComponent("uni-forms");
-  (_easycom_uni_forms_item2 + _easycom_uni_forms2)();
+  (_easycom_uni_forms_item2 + _easycom_uni_icons2 + _easycom_uni_forms2)();
 }
 const _easycom_uni_forms_item = () => "../../uni_modules/uni-forms/components/uni-forms-item/uni-forms-item.js";
+const _easycom_uni_icons = () => "../../uni_modules/uni-icons/components/uni-icons/uni-icons.js";
 const _easycom_uni_forms = () => "../../uni_modules/uni-forms/components/uni-forms/uni-forms.js";
 if (!Math) {
-  (_easycom_uni_forms_item + _easycom_uni_forms)();
+  (_easycom_uni_forms_item + _easycom_uni_icons + _easycom_uni_forms)();
 }
 const _sfc_main = {
   __name: "index",
@@ -17107,68 +17109,121 @@ const _sfc_main = {
     const short = (str) => {
       return str.slice(0, -1);
     };
+    const initform = {
+      senderAddress: "青岛市",
+      recipientAddress: "",
+      packageWeight: "",
+      tiji: "",
+      list: [{
+        c: "",
+        k: "",
+        g: "",
+        num: 1
+      }],
+      tji: "",
+      courier: ""
+    };
     const form = common_vendor.ref({
       senderAddress: "青岛市",
       recipientAddress: "",
       packageWeight: "",
-      c: "",
-      k: "",
-      g: "",
+      tiji: "",
+      list: [{
+        c: "",
+        k: "",
+        g: "",
+        num: 1
+      }],
       tji: "",
       courier: ""
     });
+    common_vendor.watch(
+      () => form.value.list,
+      (newList, oldList) => {
+        common_vendor.index.__f__("log", "at pages/index/index.vue:163", "list 发生变化:", newList);
+        const a = newList.reduce((sum, item) => {
+          const c = parseFloat(item.c) || 0;
+          const k = parseFloat(item.k) || 0;
+          const g = parseFloat(item.g) || 0;
+          const num = parseFloat(item.num) || 0;
+          return sum + c * k * g * num;
+        }, 0) / 1e6;
+        common_vendor.index.__f__("log", "at pages/index/index.vue:172", form);
+        form.value.tiji = a;
+      },
+      { deep: true }
+    );
+    const reset = () => {
+      common_vendor.index.__f__("log", "at pages/index/index.vue:180", initform);
+      couriers.value = [];
+      form.value = {
+        senderAddress: "青岛市",
+        recipientAddress: "",
+        packageWeight: "",
+        tiji: "",
+        list: [{
+          c: "",
+          k: "",
+          g: "",
+          num: 1
+        }],
+        tji: "",
+        courier: ""
+      };
+    };
     const rules = common_vendor.ref({
       recipientAddress: {
-        rules: [
-          {
-            required: true,
-            errorMessage: "请选择寄件地址"
-          }
-        ]
+        rules: [{
+          required: true,
+          errorMessage: "请选择寄件地址"
+        }]
       },
       packageWeight: {
-        rules: [
-          {
-            required: true,
-            errorMessage: "请输入物品重量"
-          }
-        ]
+        rules: [{
+          required: true,
+          errorMessage: "请输入物品重量"
+        }]
       },
-      c: {
-        rules: [
-          {
-            required: true,
-            errorMessage: "请输入长度"
-          }
-        ]
-      },
-      k: {
-        rules: [
-          {
-            required: true,
-            errorMessage: "请输入宽度"
-          }
-        ]
-      },
-      g: {
-        rules: [
-          {
-            required: true,
-            errorMessage: "请输入高度"
-          }
-        ]
+      tiji: {
+        rules: [{
+          required: true,
+          errorMessage: "请输入物品体积"
+        }]
       }
+      // k: {
+      // 	rules: [{
+      // 		required: true,
+      // 		errorMessage: '请输入宽度',
+      // 	}]
+      // },
+      // g: {
+      // 	rules: [{
+      // 		required: true,
+      // 		errorMessage: '请输入高度',
+      // 	}]
+      // },
     });
     const level1 = common_vendor.ref("");
     const level2 = common_vendor.ref("");
     const zyObj = common_vendor.ref({});
     const sfObj = common_vendor.ref({});
     const dbObj = common_vendor.ref({});
+    const add = () => {
+      form.value.list.push({
+        c: "",
+        k: "",
+        g: "",
+        num: 1
+      });
+    };
+    const del = (index) => {
+      form.value.list.splice(index, 1);
+    };
     const makePhoneCall = (e) => {
       common_vendor.index.makePhoneCall({
         phoneNumber: "18866211816",
-        success: () => common_vendor.index.__f__("log", "at pages/index/index.vue:143", "拨号成功"),
-        fail: (err) => common_vendor.index.__f__("error", "at pages/index/index.vue:144", "拨号失败:", err)
+        success: () => common_vendor.index.__f__("log", "at pages/index/index.vue:250", "拨号成功"),
+        fail: (err) => common_vendor.index.__f__("error", "at pages/index/index.vue:251", "拨号失败:", err)
       });
     };
     const haddleChange2 = (e) => {
@@ -17195,16 +17250,25 @@ const _sfc_main = {
       })[0];
     };
     const couriers = common_vendor.ref([]);
-    const lifang = common_vendor.computed(() => {
-      return parseInt(form.value.c) * parseInt(form.value.k) * parseInt(form.value.g) || "";
+    common_vendor.computed(() => {
+      common_vendor.index.__f__("log", "at pages/index/index.vue:289", form.value.tiji);
+      const res = form.value.list.reduce((init, pre) => {
+        if (pre) {
+          const num = parseFloat(pre);
+          return init + num;
+        } else {
+          return init + 0;
+        }
+      }, 0);
+      return res;
     });
     common_vendor.onMounted(() => {
     });
     const getRes = (obj) => {
       var _a;
       if (obj.value) {
-        const w = Math.max(parseInt(form.value.packageWeight), lifang.value / 5e3);
-        common_vendor.index.__f__("log", "at pages/index/index.vue:198", w);
+        const w = Math.max(parseInt(form.value.packageWeight), form.value.tiji * 200);
+        common_vendor.index.__f__("log", "at pages/index/index.vue:314", w);
         const songhuo = ((_a = obj == null ? void 0 : obj.value) == null ? void 0 : _a["送货费"]) || 0;
         const danjia = getValueByRange(obj.value, w) || 0;
         const res = w * danjia + songhuo;
@@ -17241,7 +17305,7 @@ const _sfc_main = {
       } catch (err) {
         common_vendor.index.showToast({
           icon: "none",
-          title: "error"
+          title: "输入有误"
         });
       }
     };
@@ -17267,34 +17331,65 @@ const _sfc_main = {
           label: "物品重量(kg):",
           name: "packageWeight"
         }),
-        l: form.value.c,
-        m: common_vendor.o(($event) => form.value.c = $event.detail.value),
+        l: form.value.tiji,
+        m: common_vendor.o(($event) => form.value.tiji = $event.detail.value),
         n: common_vendor.p({
+          label: "物品体积(m³):  " + form.value.tiji
+        }),
+        o: common_vendor.f(form.value.list, (item, index, i0) => {
+          return common_vendor.e({
+            a: form.value.list[index].c,
+            b: common_vendor.o(($event) => form.value.list[index].c = $event.detail.value, index),
+            c: "c96b9864-6-" + i0 + ",c96b9864-5",
+            d: form.value.list[index].k,
+            e: common_vendor.o(($event) => form.value.list[index].k = $event.detail.value, index),
+            f: "c96b9864-7-" + i0 + ",c96b9864-5",
+            g: form.value.list[index].g,
+            h: common_vendor.o(($event) => form.value.list[index].g = $event.detail.value, index),
+            i: "c96b9864-8-" + i0 + ",c96b9864-5",
+            j: form.value.list[index].num,
+            k: common_vendor.o(($event) => form.value.list[index].num = $event.detail.value, index),
+            l: "c96b9864-9-" + i0 + ",c96b9864-5",
+            m: index > 0
+          }, index > 0 ? {
+            n: "c96b9864-10-" + i0 + ",c96b9864-5",
+            o: common_vendor.p({
+              type: "clear",
+              color: "red",
+              size: "20"
+            }),
+            p: common_vendor.o(($event) => del(index), index)
+          } : {}, {
+            q: index
+          });
+        }),
+        p: common_vendor.p({
           name: "c"
         }),
-        o: form.value.k,
-        p: common_vendor.o(($event) => form.value.k = $event.detail.value),
         q: common_vendor.p({
           name: "k"
         }),
-        r: form.value.g,
-        s: common_vendor.o(($event) => form.value.g = $event.detail.value),
-        t: common_vendor.p({
+        r: common_vendor.p({
           name: "g"
         }),
+        s: common_vendor.p({
+          name: "num"
+        }),
+        t: common_vendor.o(add),
         v: common_vendor.p({
-          label: "物品体积(cm³):  " + lifang.value
+          label: "尺寸 "
         }),
         w: common_vendor.o(submitForm),
-        x: common_vendor.sr(formRef, "c96b9864-0", {
+        x: common_vendor.o(reset),
+        y: common_vendor.sr(formRef, "c96b9864-0", {
           "k": "formRef"
         }),
-        y: common_vendor.p({
+        z: common_vendor.p({
           modelValue: form.value,
           rules: rules.value,
           ["label-width"]: "100px"
         }),
-        z: common_vendor.f(couriers.value, (item, index, i0) => {
+        A: common_vendor.f(couriers.value, (item, index, i0) => {
           return common_vendor.e({
             a: common_vendor.t(item.name),
             b: item.icon,
@@ -17306,7 +17401,7 @@ const _sfc_main = {
             f: index
           });
         }),
-        A: common_vendor.o(makePhoneCall)
+        B: common_vendor.o(makePhoneCall)
       };
     };
   }
