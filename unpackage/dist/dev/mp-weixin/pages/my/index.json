@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "我的",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "uv-avatar": "../../uni_modules/uv-avatar/components/uv-avatar/uv-avatar",
+    "uv-icon": "../../uni_modules/uv-icon/components/uv-icon/uv-icon",
+    "uv-button": "../../uni_modules/uv-button/components/uv-button/uv-button",
+    "uv-cell": "../../uni_modules/uv-cell/components/uv-cell/uv-cell",
+    "uv-cell-group": "../../uni_modules/uv-cell/components/uv-cell-group/uv-cell-group",
+    "uv-toast": "../../uni_modules/uv-toast/components/uv-toast/uv-toast"
+  }
+}

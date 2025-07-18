@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "首页",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "uv-icon": "../../uni_modules/uv-icon/components/uv-icon/uv-icon",
+    "uv-search": "../../uni_modules/uv-search/components/uv-search/uv-search",
+    "uv-notice-bar": "../../uni_modules/uv-notice-bar/components/uv-notice-bar/uv-notice-bar"
+  }
+}

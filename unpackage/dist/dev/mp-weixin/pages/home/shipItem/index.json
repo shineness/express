@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "寄件",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "uv-icon": "../../../uni_modules/uv-icon/components/uv-icon/uv-icon",
+    "uv-navbar": "../../../uni_modules/uv-navbar/components/uv-navbar/uv-navbar",
+    "uv-checkbox": "../../../uni_modules/uv-checkbox/components/uv-checkbox/uv-checkbox",
+    "uv-checkbox-group": "../../../uni_modules/uv-checkbox/components/uv-checkbox-group/uv-checkbox-group"
+  }
+}

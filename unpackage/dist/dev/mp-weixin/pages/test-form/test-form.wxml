@@ -1,1 +1,0 @@
-<view class="container"><uni-forms wx:if="{{f}}" class="r" u-s="{{['d']}}" u-r="formRef" u-i="374fa8a8-0" bind:__l="__l" u-p="{{f}}"><uni-forms-item wx:if="{{c}}" u-s="{{['d']}}" u-i="374fa8a8-1,374fa8a8-0" bind:__l="__l" u-p="{{c}}"><input placeholder="请输入内容" value="{{a}}" bindinput="{{b}}"/></uni-forms-item><button bindtap="{{d}}">提交</button></uni-forms></view>

@@ -1,15 +1,47 @@
 {
 	"pages": [
+		
+		// {
+		// 	"path": "pages/test-form/test-form",
+		// 	"style": {
+		// 		"navigationBarTitleText": "表单测试"
+		// 	}
+		// },
+		{
+			"path" : "pages/home/index",
+			"style" : 
+			{
+				"navigationBarTitleText" : "首页",
+				"navigationStyle":"custom"
+			}
+		},
+		{
+			"path" : "pages/order/index",
+			"style" : 
+			{
+				"navigationBarTitleText" : "订单"
+			}
+		},
+		{
+			"path" : "pages/my/index",
+			"style" : 
+			{
+				"navigationBarTitleText" : "我的",
+				"navigationStyle":"custom"
+			}
+		},
 		{
 			"path": "pages/index/index",
 			"style": {
 				"navigationBarTitleText": "物流计算"
+				// "navigationStyle":"custom"
 			}
 		},
 		{
-			"path": "pages/test-form/test-form",
+			"path": "pages/home/shipItem/index",
 			"style": {
-				"navigationBarTitleText": "表单测试"
+				"navigationBarTitleText": "寄件",
+				"navigationStyle":"custom"
 			}
 		}
 	],
@@ -18,6 +50,35 @@
 		"navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"color": "#3a3a3a",
+		"selectedColor": "#477be5",
+		"backgroundColor": "#FFFFFF",
+		"iconWidth": "22px",
+		"height": "55px",
+		"fontSize": "11px",
+		"list": [
+			{
+				"pagePath": "pages/home/index",
+				"text": "首页",
+				"iconPath": "/static/home/home.png",
+				"selectedIconPath": "/static/home/home2.png"
+			},
+			{
+				"pagePath": "pages/order/index",
+				"text": "订单",
+				"iconPath": "/static/home/event-note.png",
+				"selectedIconPath": "/static/home/event-note2.png"
+			},
+		
+			{
+				"pagePath": "pages/my/index",
+				"text": "我的",
+				"iconPath": "/static/home/person.png",
+				"selectedIconPath": "/static/home/person2.png"
+			}
+		]
 	},
 	"uniIdRouter": {}
 }

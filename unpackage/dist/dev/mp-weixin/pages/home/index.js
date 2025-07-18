@@ -1,0 +1,115 @@
+"use strict";
+const common_vendor = require("../../common/vendor.js");
+const common_assets = require("../../common/assets.js");
+if (!Array) {
+  const _easycom_uv_icon2 = common_vendor.resolveComponent("uv-icon");
+  const _easycom_uv_search2 = common_vendor.resolveComponent("uv-search");
+  const _easycom_uv_notice_bar2 = common_vendor.resolveComponent("uv-notice-bar");
+  (_easycom_uv_icon2 + _easycom_uv_search2 + _easycom_uv_notice_bar2)();
+}
+const _easycom_uv_icon = () => "../../uni_modules/uv-icon/components/uv-icon/uv-icon.js";
+const _easycom_uv_search = () => "../../uni_modules/uv-search/components/uv-search/uv-search.js";
+const _easycom_uv_notice_bar = () => "../../uni_modules/uv-notice-bar/components/uv-notice-bar/uv-notice-bar.js";
+if (!Math) {
+  (_easycom_uv_icon + _easycom_uv_search + _easycom_uv_notice_bar)();
+}
+const _sfc_main = {
+  __name: "index",
+  setup(__props) {
+    const searchValue = common_vendor.ref("");
+    const text = common_vendor.ref("专注3kg以上寄大件/发物流,全国1-2小时上门取件,官方折扣渠道更优惠~");
+    const businessModules = common_vendor.ref([
+      {
+        icon: "📦",
+        title: "普货零担",
+        description: "灵活拼载，普货运输高效达",
+        to: "/pages/index/index"
+      },
+      {
+        icon: "❄️",
+        title: "冷冻零担",
+        description: "冷链零担，鲜货无忧运输",
+        to: "/pages/home/shipItem/index"
+      },
+      {
+        icon: "✈️",
+        title: "车车运输",
+        description: "整车直发，一站门到门"
+      },
+      {
+        icon: "🚛",
+        title: "国内空运",
+        description: "国内空运，极速通达全国"
+      },
+      {
+        icon: "🚚",
+        title: "城市配送",
+        description: "城市区域配送"
+      },
+      {
+        icon: "🌍",
+        title: "城市配送",
+        description: "快速送达身边"
+      },
+      {
+        icon: "📋",
+        title: "国际运输",
+        description: "连接全球贸易"
+      },
+      {
+        icon: "🚄",
+        title: "铁路运输",
+        description: "稳定高效大运"
+      }
+    ]);
+    const handleSearchSubmit = () => {
+      common_vendor.index.__f__("log", "at pages/home/index.vue:140", "搜索提交:", searchValue.value);
+    };
+    const handleSearchChange = () => {
+    };
+    const handleModuleClick = (module) => {
+      common_vendor.index.__f__("log", "at pages/home/index.vue:146", "模块点击:", module.title);
+      common_vendor.index.navigateTo({
+        url: module.to
+      });
+    };
+    return (_ctx, _cache) => {
+      return {
+        a: common_assets._imports_0,
+        b: common_vendor.p({
+          name: "search",
+          size: "24"
+        }),
+        c: common_vendor.o(handleSearchSubmit),
+        d: common_vendor.o(handleSearchChange),
+        e: common_vendor.o(($event) => searchValue.value = $event),
+        f: common_vendor.p({
+          placeholder: "请输入物流单号或扫码单号",
+          ["show-action"]: false,
+          ["bg-color"]: "white",
+          shape: "round",
+          height: "44",
+          modelValue: searchValue.value
+        }),
+        g: common_vendor.p({
+          text: text.value,
+          fontSize: "12",
+          speed: "60",
+          color: "#5d5d5d"
+        }),
+        h: common_vendor.f(businessModules.value, (module, index, i0) => {
+          return {
+            a: common_vendor.t(module.icon),
+            b: common_vendor.t(module.title),
+            c: common_vendor.t(module.description),
+            d: index,
+            e: common_vendor.o(($event) => handleModuleClick(module), index)
+          };
+        })
+      };
+    };
+  }
+};
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__scopeId", "data-v-4978fed5"]]);
+wx.createPage(MiniProgramPage);
+//# sourceMappingURL=../../../.sourcemap/mp-weixin/pages/home/index.js.map
