@@ -1,0 +1,1 @@
+{"version":3,"file":"wljjfa.js","sources":["E:/HBuilderX/plugins/uniapp-cli-vite/uniPage:/cGFnZXMvaG9tZS93bGpqZmEvd2xqamZhLnZ1ZQ"],"sourcesContent":["import MiniProgramPage from 'D:/project/express2/pages/home/wljjfa/wljjfa.vue'\nwx.createPage(MiniProgramPage)"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AACA,GAAG,WAAW,eAAe;"}

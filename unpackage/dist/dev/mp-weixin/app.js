@@ -7,6 +7,12 @@ if (!Math) {
   "./pages/my/index.js";
   "./pages/index/index.js";
   "./pages/home/shipItem/index.js";
+  "./pages/home/zcys/zcys.js";
+  "./pages/home/ccgyl/ccgyl.js";
+  "./pages/home/csps/csps.js";
+  "./pages/home/gjys/gjys.js";
+  "./pages/home/wljjfa/wljjfa.js";
+  "./pages/home/kf/kf.js";
 }
 const _sfc_main = {
   onLaunch: function() {

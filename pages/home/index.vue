@@ -5,7 +5,7 @@
 			<view class="header">
 				<view class="header-left">
 					<image class="logo" src="/static/jdl-logo.png" mode="aspectFit" />
-					<text class="brand-text">整合物流平台</text>
+					<text class="brand-text">物流解决方案</text>
 				</view>
 
 			</view>
@@ -13,7 +13,7 @@
 			<!-- 主横幅区域 -->
 			<view class="banner">
 				<view class="banner-content">
-					<text class="banner-title">整合多家快递，寄递更省钱</text>
+					<text class="banner-title">一站式物流解决方案</text>
 
 					<!-- 物流公司logo展示 -->
 					<view class="logistics-brands">
@@ -82,44 +82,50 @@
 	const businessModules = ref([{
 			icon: '📦',
 			title: '普货零担',
-			description: '灵活拼载，普货运输高效达',
-			to:"/pages/index/index"
+			description: '灵活拼载高效达',
+			to:"/pages/index/index?type=1"
 		},
 		{
 			icon: '❄️',
 			title: '冷冻零担',
 			description: '冷链零担，鲜货无忧运输',
-			to:"/pages/home/shipItem/index"
+			to:"/pages/index/index?type=2"
 		},
 		{
-			icon: '✈️',
-			title: '车车运输',
-			description: '整车直发，一站门到门'
+			icon: '️🚛',
+			title: '整车运输',
+			description: '整车直发，一站门到门',
+			to:"/pages/home/zcys/zcys"
 		},
 		{
-			icon: '🚛',
-			title: '国内空运',
-			description: '国内空运，极速通达全国'
+			icon: '🔁',
+			title: '仓储供应链',
+			description: '国内空运，极速通达全国',
+			to:"/pages/home/ccgyl/ccgyl"
 		},
 		{
 			icon: '🚚',
 			title: '城市配送',
-			description: '城市区域配送'
+			description: '城市区域配送',
+			to:"/pages/home/csps/csps"
 		},
 		{
 			icon: '🌍',
-			title: '城市配送',
-			description: '快速送达身边'
+			title: '国际运输',
+			description: '连接全球贸易',
+			to:"/pages/home/gjys/gjys"
 		},
 		{
 			icon: '📋',
-			title: '国际运输',
-			description: '连接全球贸易'
+			title: '物流解决方案',
+			description: '快速送达身边',
+			to:"/pages/home/wljjfa/wljjfa"
 		},
 		{
-			icon: '🚄',
-			title: '铁路运输',
-			description: '稳定高效大运'
+			icon: '💻',
+			title: '联系我们',
+			description: '服务有保障',
+			to:"/pages/home/kf/kf"
 		}
 	])
 
@@ -143,7 +149,7 @@
 
 	}
 	const handleModuleClick = (module) => {
-		console.log('模块点击:', module.title)
+	
 		uni.navigateTo({
 			url:module.to
 		})

@@ -1,0 +1,1 @@
+{"version":3,"file":"gjys.js","sources":["E:/HBuilderX/plugins/uniapp-cli-vite/uniPage:/cGFnZXMvaG9tZS9nanlzL2dqeXMudnVl"],"sourcesContent":["import MiniProgramPage from 'D:/project/express2/pages/home/gjys/gjys.vue'\nwx.createPage(MiniProgramPage)"],"names":["MiniProgramPage"],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AACA,GAAG,WAAWA,SAAe;"}

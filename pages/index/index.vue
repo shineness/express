@@ -90,22 +90,13 @@
 			</view>
 		</view>
 
-		<view class="bottom">
-			<view>
-				青岛一通宏祥物流有限公司
-			</view>
-			<view>
-				任启祥 <text style="color:red" type="default" @click="makePhoneCall" data-phone="18866211816">
-					点击此处联系我 </text>
-			</view>
-
-
-
-		</view>
+		
 	</view>
 </template>
 
 <script setup>
+	import { onLoad, onShow } from "@dcloudio/uni-app";
+	
 	import {
 		ref,
 		onMounted,
@@ -141,7 +132,7 @@
 		tji: "",
 		courier: ''
 	}
-
+	const type=ref()
 	const form = ref({
 		senderAddress: '青岛市',
 		recipientAddress: '',
@@ -342,7 +333,7 @@
 					sx: dbObj?.value?.["预计时效"] || ""
 				},
 				{
-					name: "自有",
+					name: "一通",
 					icon: "",
 					value: getRes(sfObj),
 					sx: dbObj?.value?.["预计时效"] || ""
@@ -359,6 +350,10 @@
 
 
 	}
+	onLoad((param)=>{
+		type.value=param.type
+		debugger
+	})
 </script>
 
 <style>

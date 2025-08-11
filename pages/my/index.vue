@@ -108,7 +108,7 @@
 
         <!-- 版本信息 -->
         <view class="version-info">
-            <text class="version-text">风火递技术支持 | v2.7.2 正式版</text>
+            <text class="version-text"> v1.0.2 正式版</text>
         </view>
 
         <!-- 底部导航 -->

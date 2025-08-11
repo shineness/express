@@ -4,7 +4,13 @@
     "pages/order/index",
     "pages/my/index",
     "pages/index/index",
-    "pages/home/shipItem/index"
+    "pages/home/shipItem/index",
+    "pages/home/zcys/zcys",
+    "pages/home/ccgyl/ccgyl",
+    "pages/home/csps/csps",
+    "pages/home/gjys/gjys",
+    "pages/home/wljjfa/wljjfa",
+    "pages/home/kf/kf"
   ],
   "window": {
     "navigationBarTextStyle": "black",

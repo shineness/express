@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "仓储供应链",
+  "usingComponents": {
+    "uv-collapse-item": "../../../uni_modules/uv-collapse/components/uv-collapse-item/uv-collapse-item",
+    "uv-collapse": "../../../uni_modules/uv-collapse/components/uv-collapse/uv-collapse"
+  }
+}

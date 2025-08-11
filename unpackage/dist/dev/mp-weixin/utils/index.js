@@ -29,5 +29,13 @@ const pagesRoute = () => {
     common_vendor.index.switchTab({ url });
   }
 };
+const makePhoneCall = (e) => {
+  common_vendor.index.makePhoneCall({
+    phoneNumber: "18866211816",
+    success: () => common_vendor.index.__f__("log", "at utils/index.js:38", "拨号成功"),
+    fail: (err) => common_vendor.index.__f__("error", "at utils/index.js:39", "拨号失败:", err)
+  });
+};
+exports.makePhoneCall = makePhoneCall;
 exports.pagesRoute = pagesRoute;
 //# sourceMappingURL=../../.sourcemap/mp-weixin/utils/index.js.map

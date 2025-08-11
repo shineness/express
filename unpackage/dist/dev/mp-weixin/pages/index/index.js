@@ -17123,6 +17123,7 @@ const _sfc_main = {
       tji: "",
       courier: ""
     };
+    const type = common_vendor.ref();
     const form = common_vendor.ref({
       senderAddress: "青岛市",
       recipientAddress: "",
@@ -17140,7 +17141,7 @@ const _sfc_main = {
     common_vendor.watch(
       () => form.value.list,
       (newList, oldList) => {
-        common_vendor.index.__f__("log", "at pages/index/index.vue:163", "list 发生变化:", newList);
+        common_vendor.index.__f__("log", "at pages/index/index.vue:154", "list 发生变化:", newList);
         const a = newList.reduce((sum, item) => {
           const c = parseFloat(item.c) || 0;
           const k = parseFloat(item.k) || 0;
@@ -17148,13 +17149,13 @@ const _sfc_main = {
           const num = parseFloat(item.num) || 0;
           return sum + c * k * g * num;
         }, 0) / 1e6;
-        common_vendor.index.__f__("log", "at pages/index/index.vue:172", form);
+        common_vendor.index.__f__("log", "at pages/index/index.vue:163", form);
         form.value.tiji = a;
       },
       { deep: true }
     );
     const reset = () => {
-      common_vendor.index.__f__("log", "at pages/index/index.vue:180", initform);
+      common_vendor.index.__f__("log", "at pages/index/index.vue:171", initform);
       couriers.value = [];
       form.value = {
         senderAddress: "青岛市",
@@ -17219,13 +17220,6 @@ const _sfc_main = {
     const del = (index) => {
       form.value.list.splice(index, 1);
     };
-    const makePhoneCall = (e) => {
-      common_vendor.index.makePhoneCall({
-        phoneNumber: "18866211816",
-        success: () => common_vendor.index.__f__("log", "at pages/index/index.vue:250", "拨号成功"),
-        fail: (err) => common_vendor.index.__f__("error", "at pages/index/index.vue:251", "拨号失败:", err)
-      });
-    };
     const haddleChange2 = (e) => {
       const l0 = e.detail.value[0];
       const l1 = e.detail.value[1];
@@ -17251,7 +17245,7 @@ const _sfc_main = {
     };
     const couriers = common_vendor.ref([]);
     common_vendor.computed(() => {
-      common_vendor.index.__f__("log", "at pages/index/index.vue:289", form.value.tiji);
+      common_vendor.index.__f__("log", "at pages/index/index.vue:280", form.value.tiji);
       const res = form.value.list.reduce((init, pre) => {
         if (pre) {
           const num = parseFloat(pre);
@@ -17268,7 +17262,7 @@ const _sfc_main = {
       var _a;
       if (obj.value) {
         const w = Math.max(parseInt(form.value.packageWeight), form.value.tiji * 200);
-        common_vendor.index.__f__("log", "at pages/index/index.vue:314", w);
+        common_vendor.index.__f__("log", "at pages/index/index.vue:305", w);
         const songhuo = ((_a = obj == null ? void 0 : obj.value) == null ? void 0 : _a["送货费"]) || 0;
         const danjia = getValueByRange(obj.value, w) || 0;
         const res = w * danjia + songhuo;
@@ -17296,7 +17290,7 @@ const _sfc_main = {
             sx: ((_b = dbObj == null ? void 0 : dbObj.value) == null ? void 0 : _b["预计时效"]) || ""
           },
           {
-            name: "自有",
+            name: "一通",
             icon: "",
             value: getRes(sfObj),
             sx: ((_c = dbObj == null ? void 0 : dbObj.value) == null ? void 0 : _c["预计时效"]) || ""
@@ -17309,6 +17303,10 @@ const _sfc_main = {
         });
       }
     };
+    common_vendor.onLoad((param) => {
+      type.value = param.type;
+      debugger;
+    });
     return (_ctx, _cache) => {
       return {
         a: form.value.senderAddress,
@@ -17400,8 +17398,7 @@ const _sfc_main = {
           } : {}, {
             f: index
           });
-        }),
-        B: common_vendor.o(makePhoneCall)
+        })
       };
     };
   }

@@ -1,0 +1,1 @@
+<view class="uv-collapse"><uv-line wx:if="{{a}}" u-i="575c93c3-0" bind:__l="__l"></uv-line><slot/></view>

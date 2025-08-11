@@ -14,5 +14,13 @@
 
 <style>
 	/*每个页面公共css */
-
+ .service-desc {
+	      font-size: 24rpx;
+	      color: #666;
+	      text-align: center;
+	      line-height: 1.4;
+	    }
+		.service-item{
+			margin-bottom: 6rpx;
+		}
 </style>

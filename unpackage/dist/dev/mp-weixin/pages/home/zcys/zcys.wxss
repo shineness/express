@@ -1,0 +1,50 @@
+
+.container.data-v-35d28904 {
+  padding: 15px;
+}
+.title.data-v-35d28904 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+.highlight.data-v-35d28904 {
+  color: #f56c6c;
+  font-weight: bold;
+}
+
+/* 表格斑马纹底色（需全局样式） */
+.data-v-35d28904 .uni-table-tr:nth-child(even) {
+  background-color: #fafafa;
+}
+/* 价格说明 */
+.notice-box.data-v-35d28904 {
+  margin-top: 40rpx;
+  padding: 20rpx;
+  background-color: #fff;
+  border-radius: 12rpx;
+  box-shadow: 0 2rpx 12rpx 0 rgba(0, 0, 0, 0.05);
+}
+.notice-title.data-v-35d28904 {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 16rpx;
+}
+.notice-item.data-v-35d28904 {
+  font-size: 26rpx;
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 12rpx;
+  position: relative;
+  padding-left: 20rpx;
+}
+.contact.data-v-35d28904 {
+  margin-top: 20rpx;
+  color: #333;
+}
+.contact-btn.data-v-35d28904 {
+  color: #1890ff;
+  text-decoration: underline;
+  margin-left: 10rpx;
+}

@@ -1,1 +1,1 @@
-{"version":3,"file":"assets.js","sources":["E:/static/jdl-logo.png"],"sourcesContent":["export default \"/static/jdl-logo.png\""],"names":[],"mappings":";AAAA,MAAe,aAAA;;"}
+{"version":3,"file":"assets.js","sources":["E:/static/jdl-logo.png","static/bh.jpg"],"sourcesContent":["export default \"/static/jdl-logo.png\"","export default \"__VITE_ASSET__0b30ebff__\""],"names":[],"mappings":";AAAA,MAAe,eAAA;ACAf,MAAe,aAAA;;;"}

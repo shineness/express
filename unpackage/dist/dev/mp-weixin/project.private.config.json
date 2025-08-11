@@ -3,11 +3,25 @@
     "miniprogram": {
       "list": [
         {
-          "name": "pages/home/shipItem/index",
-          "pathName": "pages/home/shipItem/index",
+          "name": "pages/home/kf/kf",
+          "pathName": "pages/home/kf/kf",
           "query": "",
           "scene": null,
           "launchMode": "default"
+        },
+        {
+          "name": "pages/home/zcys/zcys",
+          "pathName": "pages/home/zcys/zcys",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/home/shipItem/index",
+          "pathName": "pages/home/shipItem/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

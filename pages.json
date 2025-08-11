@@ -43,6 +43,48 @@
 				"navigationBarTitleText": "寄件",
 				"navigationStyle":"custom"
 			}
+		},
+		{
+			"path" : "pages/home/zcys/zcys",
+			"style" : 
+			{
+				"navigationBarTitleText" : "整车运输"
+			}
+		},
+		{
+			"path" : "pages/home/ccgyl/ccgyl",
+			"style" : 
+			{
+				"navigationBarTitleText" : "仓储供应链"
+			}
+		},
+		{
+			"path" : "pages/home/csps/csps",
+			"style" : 
+			{
+				"navigationBarTitleText" : "城市配送"
+			}
+		},
+		{
+			"path" : "pages/home/gjys/gjys",
+			"style" : 
+			{
+				"navigationBarTitleText" : ""
+			}
+		},
+		{
+			"path" : "pages/home/wljjfa/wljjfa",
+			"style" : 
+			{
+				"navigationBarTitleText" : "物流解决方案"
+			}
+		},
+		{
+			"path" : "pages/home/kf/kf",
+			"style" : 
+			{
+				"navigationBarTitleText" : "联系我们"
+			}
 		}
 	],
 	"globalStyle": {

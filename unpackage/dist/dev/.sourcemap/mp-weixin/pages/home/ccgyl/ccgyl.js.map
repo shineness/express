@@ -1,0 +1,1 @@
+{"version":3,"file":"ccgyl.js","sources":["E:/HBuilderX/plugins/uniapp-cli-vite/uniPage:/cGFnZXMvaG9tZS9jY2d5bC9jY2d5bC52dWU"],"sourcesContent":["import MiniProgramPage from 'D:/project/express2/pages/home/ccgyl/ccgyl.vue'\nwx.createPage(MiniProgramPage)"],"names":["MiniProgramPage"],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AACA,GAAG,WAAWA,SAAe;"}
