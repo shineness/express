@@ -85,6 +85,13 @@
 			{
 				"navigationBarTitleText" : "联系我们"
 			}
+		},
+		{
+			"path" : "pages/home/phld/phld",
+			"style" : 
+			{
+				"navigationBarTitleText" : "普货零担"
+			}
 		}
 	],
 	"globalStyle": {

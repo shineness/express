@@ -17338,19 +17338,19 @@ const _sfc_main = {
           return common_vendor.e({
             a: form.value.list[index].c,
             b: common_vendor.o(($event) => form.value.list[index].c = $event.detail.value, index),
-            c: "c96b9864-6-" + i0 + ",c96b9864-5",
+            c: "9688a32c-6-" + i0 + ",9688a32c-5",
             d: form.value.list[index].k,
             e: common_vendor.o(($event) => form.value.list[index].k = $event.detail.value, index),
-            f: "c96b9864-7-" + i0 + ",c96b9864-5",
+            f: "9688a32c-7-" + i0 + ",9688a32c-5",
             g: form.value.list[index].g,
             h: common_vendor.o(($event) => form.value.list[index].g = $event.detail.value, index),
-            i: "c96b9864-8-" + i0 + ",c96b9864-5",
+            i: "9688a32c-8-" + i0 + ",9688a32c-5",
             j: form.value.list[index].num,
             k: common_vendor.o(($event) => form.value.list[index].num = $event.detail.value, index),
-            l: "c96b9864-9-" + i0 + ",c96b9864-5",
+            l: "9688a32c-9-" + i0 + ",9688a32c-5",
             m: index > 0
           }, index > 0 ? {
-            n: "c96b9864-10-" + i0 + ",c96b9864-5",
+            n: "9688a32c-10-" + i0 + ",9688a32c-5",
             o: common_vendor.p({
               type: "clear",
               color: "red",
@@ -17379,7 +17379,7 @@ const _sfc_main = {
         }),
         w: common_vendor.o(submitForm),
         x: common_vendor.o(reset),
-        y: common_vendor.sr(formRef, "c96b9864-0", {
+        y: common_vendor.sr(formRef, "9688a32c-0", {
           "k": "formRef"
         }),
         z: common_vendor.p({

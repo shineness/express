@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "普货零担",
+  "usingComponents": {
+    "uni-forms-item": "../../../uni_modules/uni-forms/components/uni-forms-item/uni-forms-item",
+    "uni-data-select": "../../../uni_modules/uni-data-select/components/uni-data-select/uni-data-select",
+    "uni-icons": "../../../uni_modules/uni-icons/components/uni-icons/uni-icons",
+    "uv-button": "../../../uni_modules/uv-button/components/uv-button/uv-button",
+    "uni-forms": "../../../uni_modules/uni-forms/components/uni-forms/uni-forms"
+  }
+}

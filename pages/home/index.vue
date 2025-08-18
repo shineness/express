@@ -83,7 +83,7 @@
 			icon: '📦',
 			title: '普货零担',
 			description: '灵活拼载高效达',
-			to:"/pages/index/index?type=1"
+			to:"/pages/home/phld/phld"
 		},
 		{
 			icon: '❄️',

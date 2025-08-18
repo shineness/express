@@ -28,7 +28,7 @@ const _sfc_main = {
         a: common_vendor.f(obj, (item, index, i0) => {
           return {
             a: common_vendor.t(item.content),
-            b: "1151df14-1-" + i0 + ",1151df14-0",
+            b: "57fb7f4c-1-" + i0 + ",57fb7f4c-0",
             c: common_vendor.p({
               title: item.title,
               name: index

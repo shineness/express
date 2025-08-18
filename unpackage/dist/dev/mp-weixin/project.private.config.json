@@ -3,11 +3,18 @@
     "miniprogram": {
       "list": [
         {
-          "name": "pages/home/kf/kf",
-          "pathName": "pages/home/kf/kf",
+          "name": "pages/home/phld/phld",
+          "pathName": "pages/home/phld/phld",
           "query": "",
           "scene": null,
           "launchMode": "default"
+        },
+        {
+          "name": "pages/home/kf/kf",
+          "pathName": "pages/home/kf/kf",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         },
         {
           "name": "pages/home/zcys/zcys",

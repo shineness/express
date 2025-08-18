@@ -13,6 +13,7 @@ if (!Math) {
   "./pages/home/gjys/gjys.js";
   "./pages/home/wljjfa/wljjfa.js";
   "./pages/home/kf/kf.js";
+  "./pages/home/phld/phld.js";
 }
 const _sfc_main = {
   onLaunch: function() {

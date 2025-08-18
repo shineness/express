@@ -10,7 +10,8 @@
     "pages/home/csps/csps",
     "pages/home/gjys/gjys",
     "pages/home/wljjfa/wljjfa",
-    "pages/home/kf/kf"
+    "pages/home/kf/kf",
+    "pages/home/phld/phld"
   ],
   "window": {
     "navigationBarTextStyle": "black",
