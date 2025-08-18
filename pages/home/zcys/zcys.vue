@@ -5,19 +5,20 @@
     <uni-table border stripe emptyText="暂无数据">
       <uni-tr>
         <uni-th width="100" align="center">车型</uni-th>
+		<uni-th width="120" align="center">价格</uni-th>
+        <uni-th width="140" align="center">车型</uni-th>
         <uni-th width="120" align="center">参考内径</uni-th>
-        <uni-th width="120" align="center">参考方数</uni-th>
-        <uni-th width="100" align="center">载重</uni-th>
-        <uni-th width="120" align="center">价格</uni-th>
+        <uni-th width="140" align="center">载重</uni-th>
       </uni-tr>
       <uni-tr v-for="(item, index) in normalTempData" :key="index">
         <uni-td align="center">{{ item.type }}</uni-td>
+		<uni-td align="center" :class="{ 'highlight': parsePrice(item.price) > 10 }">
+		  {{ item.price }}
+		</uni-td>
         <uni-td align="center">{{ item.style }}</uni-td>
         <uni-td align="center">{{ item.dimension }}</uni-td>
         <uni-td align="center">{{ item.weight }}</uni-td>
-        <uni-td align="center" :class="{ 'highlight': parsePrice(item.price) > 10 }">
-          {{ item.price }}
-        </uni-td>
+      
       </uni-tr>
     </uni-table>
 
@@ -26,27 +27,29 @@
     <uni-table border stripe>
       <uni-tr>
         <uni-th width="100" align="center">车型</uni-th>
+		 <uni-th width="120" align="center">价格</uni-th>
+        <uni-th width="100" align="center">车型</uni-th>
         <uni-th width="120" align="center">参考内径</uni-th>
-        <uni-th width="120" align="center">参考方数</uni-th>
         <uni-th width="100" align="center">载重</uni-th>
-        <uni-th width="120" align="center">价格</uni-th>
+       
       </uni-tr>
       <uni-tr v-for="(item, index) in coldStorageData" :key="index">
         <uni-td align="center">{{ item.type }}</uni-td>
+		<uni-td align="center" :class="{ 'highlight': parsePrice(item.price) > 10 }">
+		  {{ item.price }}
+		</uni-td>
         <uni-td align="center">{{ item.style }}</uni-td>
         <uni-td align="center">{{ item.dimension }}</uni-td>
         <uni-td align="center">{{ item.weight }}</uni-td>
-        <uni-td align="center" :class="{ 'highlight': parsePrice(item.price) > 10 }">
-          {{ item.price }}
-        </uni-td>
+    
       </uni-tr>
     </uni-table>
 	  <view class="notice-box">
 	      <view class="notice-title">价格说明：</view>
-	      <view class="notice-item">1. 此价格含6%增值税专用发票（包含代理运输服务，运输方式及责任范围可咨询客服）</view>
+	      <view class="notice-item">1. 此价格含9%增值税专用发票（包含代理运输服务，运输方式及责任范围可咨询客服）</view>
 	      <view class="notice-item">2. 货值超过3000元建议投保，保险费按货值的万分之八计算</view>
 	      <view class="notice-item">3. 此价格为参考价，具体价格请联系客服确认</view>
-	      <view class="notice-item contact">具体咨询客服：<text class="contact-btn" @click="makePhoneCall" data-phone="18866211816">点击联系</text></view>
+	      <view class="notice-item contact">具体咨询客服：<text class="contact-btn" @click="makePhoneCall()" data-phone="18866211816">点击联系</text></view>
 	    </view>
   </view>
 </template>
@@ -67,9 +70,9 @@ const normalTempData = ref([
   { type: '6米8', style: '平板/高栏/厢车', dimension: '6.4*2.2*2.5', weight: '6吨', price: '7.5元/公里' },
   { type: '9米6', style: '平板/高栏/厢车', dimension: '9.0*2.2*2.5', weight: '10吨', price: '8.5元/公里' },
   { type: '13米', style: '高栏', dimension: '12.5*2.3*2.5', weight: '18吨', price: '9.5元/公里' },
-  { type: '13米75', style: '高低板', dimension: '13.2*2.3*2.5', weight: '25吨', price: '11元/公里' },
-  { type: '17米5', style: '高低板', dimension: '16*2.3*2.5', weight: '25吨', price: '12元/公里' },
-  { type: '气垫车', style: '厢车、飞翼、平板', dimension: '具体咨询客服', weight: '', price: '' }
+  { type: '13米75', style: '高低板', dimension: '13.5*2.8*2.5', weight: '25吨', price: '11元/公里' },
+  { type: '17米5', style: '高低板', dimension: '17.5*2.8*2.5', weight: '25吨', price: '12元/公里' },
+  { type: '气垫车', style: '厢车、飞翼、平板', dimension: '具体咨询客服', weight: '具体咨询客服', price: '具体咨询客服' }
 ])
 
 // 冷藏车型数据

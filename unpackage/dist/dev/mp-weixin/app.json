@@ -11,7 +11,8 @@
     "pages/home/gjys/gjys",
     "pages/home/wljjfa/wljjfa",
     "pages/home/kf/kf",
-    "pages/home/phld/phld"
+    "pages/home/phld/phld",
+    "pages/home/ldld/ldld"
   ],
   "window": {
     "navigationBarTextStyle": "black",

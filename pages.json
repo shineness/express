@@ -92,6 +92,13 @@
 			{
 				"navigationBarTitleText" : "普货零担"
 			}
+		},
+		{
+			"path" : "pages/home/ldld/ldld",
+			"style" : 
+			{
+				"navigationBarTitleText" : "冷冻零担"
+			}
 		}
 	],
 	"globalStyle": {

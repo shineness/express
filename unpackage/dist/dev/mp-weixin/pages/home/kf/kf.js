@@ -13,16 +13,12 @@ if (!Math) {
 const _sfc_main = {
   __name: "kf",
   setup(__props) {
-    const clickS = (index) => {
-      if (index == 2) {
-        utils_index.makePhoneCall();
-      }
+    const clickS = (it) => {
+      utils_index.makePhoneCall(it.value);
     };
     const arr = [
-      { icon: "email-fill", title: "邮箱", value: "123@163.com" },
-      { icon: "qq-fill", title: "QQ", value: "123456789" },
-      { icon: "phone-fill", title: "热线", value: "18866211816" },
-      { icon: "empty-address", title: "地址", value: "山东省青岛市城阳区流亭街道政建物流园B区12号" }
+      { icon: "phone-fill", title: "服务热线", value: "18866274507", name: "樊经理" },
+      { icon: "phone-fill", title: "监督电话", value: "18866211816", name: "任经理" }
     ];
     return (_ctx, _cache) => {
       return {
@@ -36,8 +32,9 @@ const _sfc_main = {
               size: "28"
             }),
             c: common_vendor.t(item.title),
-            d: common_vendor.t(item.value),
-            e: common_vendor.o(($event) => clickS(index))
+            d: common_vendor.t(item.name),
+            e: common_vendor.t(item.value),
+            f: common_vendor.o(($event) => clickS(item))
           };
         })
       };

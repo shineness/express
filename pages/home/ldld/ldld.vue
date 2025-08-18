@@ -80,8 +80,8 @@
 			<view class="res">
 				<view class="item" v-for="item,index in couriers" :key="index">
 					<view class="com">{{item.name}}</view>
-					<uni-icons :type="item.icon" size="30" ></uni-icons>
-					<!-- <image :src="item.icon" style="width: 80rpx;height: 80rpx;margin-top: 20rpx;"></image> -->
+					<!-- <uni-icons :type="item.icon" size="30" ></uni-icons> -->
+					<image :src="item.icon" style="width: 80rpx;height: 80rpx;margin-top: 20rpx;"></image>
 					<view class="mony">¥<text class="number">{{item.value}}</text></view>
 					<view class="sx" v-if="item.sx">预计时效<text class="number">{{item.sx}}</text></view>
 				</view>
@@ -312,9 +312,9 @@
 
 	const getRes = (obj) => {
 		let o = {}
-		const maxW = Math.max(parseInt(form.value.packageWeight), form.value.tiji * 200)
+		const maxW = Math.max(parseInt(form.value.packageWeight), form.value.tiji * 333.33)
 		//最低价
-		const arr = ['cg', 'drd', 'crd']
+		const arr = ['sfll', 'jdll', 'ztll']
 		arr.map((item) => {
 			if (obj[item + '_base']) {
 				const base = obj[item + '_base']
@@ -379,19 +379,19 @@
 
 
 			couriers.value = [{
-					name: "陆运货物",
-					icon: "map-pin-ellipse",
-					value: resO.cg,
+					name: "京东冷链",
+					icon: "/static/jd.png",
+					value: resO.jdll,
 				},
 				{
-					name: "空运当日达",
-					icon: "paperplane",
-					value: resO.drd,
+					name: "顺丰冷链",
+					icon: "/static/sf.png",
+					value: resO.sfll,
 				},
 				{
-					name: "空运次日达",
-					icon: "paperplane-filled",
-					value: resO.crd,
+					name: "中通冷链",
+					icon: "/static/zt.png",
+					value: resO.ztll,
 				}
 			]
 		}

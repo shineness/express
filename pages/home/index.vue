@@ -82,37 +82,37 @@
 	const businessModules = ref([{
 			icon: '📦',
 			title: '普货零担',
-			description: '灵活拼载高效达',
+			description: '全国可发当日达、次日达',
 			to:"/pages/home/phld/phld"
 		},
 		{
 			icon: '❄️',
 			title: '冷冻零担',
-			description: '冷链零担，鲜货无忧运输',
-			to:"/pages/index/index?type=2"
+			description: '冷链发全国，可发冷链快递',
+			to:"/pages/home/ldld/ldld"
 		},
 		{
 			icon: '️🚛',
 			title: '整车运输',
-			description: '整车直发，一站门到门',
+			description: '整车门到门，全额货物险',
 			to:"/pages/home/zcys/zcys"
 		},
 		{
 			icon: '🔁',
 			title: '仓储供应链',
-			description: '国内空运，极速通达全国',
+			description: '基础仓储、流通加工、系统对接、一件代发',
 			to:"/pages/home/ccgyl/ccgyl"
 		},
 		{
 			icon: '🚚',
 			title: '城市配送',
-			description: '城市区域配送',
+			description: '常温配送、冷链配送、定制化交付',
 			to:"/pages/home/csps/csps"
 		},
 		{
 			icon: '🌍',
 			title: '国际运输',
-			description: '连接全球贸易',
+			description: '畅达全球，无缝连接',
 			to:"/pages/home/gjys/gjys"
 		},
 		{

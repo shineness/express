@@ -35,8 +35,9 @@ export const pagesRoute = () => {
 
 }
 export const makePhoneCall = (e) => {
+	debugger
 	uni.makePhoneCall({
-		phoneNumber: "18866211816",
+		phoneNumber: e||"18866211816",
 		success: () => console.log('拨号成功'),
 		fail: (err) => console.error('拨号失败:', err)
 	});

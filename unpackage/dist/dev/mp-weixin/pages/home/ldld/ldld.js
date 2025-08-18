@@ -17,7 +17,7 @@ if (!Math) {
   (_easycom_uni_forms_item + _easycom_uni_icons + _easycom_uv_button + _easycom_uni_forms)();
 }
 const _sfc_main = {
-  __name: "phld",
+  __name: "ldld",
   setup(__props) {
     const mainBtn = {
       borderRadius: "40rpx",
@@ -62,7 +62,7 @@ const _sfc_main = {
     common_vendor.watch(
       () => form.value.list,
       (newList, oldList) => {
-        common_vendor.index.__f__("log", "at pages/home/phld/phld.vue:164", "list 发生变化:", newList);
+        common_vendor.index.__f__("log", "at pages/home/ldld/ldld.vue:164", "list 发生变化:", newList);
         const a = newList.reduce((sum, item) => {
           const c = parseFloat(item.c) || 0;
           const k = parseFloat(item.k) || 0;
@@ -70,7 +70,7 @@ const _sfc_main = {
           const num = parseFloat(item.num) || 0;
           return sum + c * k * g * num;
         }, 0) / 1e6;
-        common_vendor.index.__f__("log", "at pages/home/phld/phld.vue:173", form);
+        common_vendor.index.__f__("log", "at pages/home/ldld/ldld.vue:173", form);
         form.value.tiji = a;
       },
       {
@@ -78,7 +78,7 @@ const _sfc_main = {
       }
     );
     const reset = () => {
-      common_vendor.index.__f__("log", "at pages/home/phld/phld.vue:182", initform);
+      common_vendor.index.__f__("log", "at pages/home/ldld/ldld.vue:182", initform);
       couriers.value = [];
       form.value = {
         senderAddress: "青岛市",
@@ -159,7 +159,7 @@ const _sfc_main = {
     };
     const couriers = common_vendor.ref([]);
     common_vendor.computed(() => {
-      common_vendor.index.__f__("log", "at pages/home/phld/phld.vue:292", form.value.tiji);
+      common_vendor.index.__f__("log", "at pages/home/ldld/ldld.vue:292", form.value.tiji);
       const res = form.value.list.reduce((init, pre) => {
         if (pre) {
           const num = parseFloat(pre);
@@ -174,14 +174,14 @@ const _sfc_main = {
     });
     const getRes = (obj) => {
       let o = {};
-      const maxW = Math.max(parseInt(form.value.packageWeight), form.value.tiji * 200);
-      const arr = ["cg", "drd", "crd"];
+      const maxW = Math.max(parseInt(form.value.packageWeight), form.value.tiji * 333.33);
+      const arr = ["sfll", "jdll", "ztll"];
       arr.map((item) => {
         var _a, _b;
         if (obj[item + "_base"]) {
           const base = obj[item + "_base"];
           const p1 = utils_index.findValueByRange(maxW, obj, item + "_") * form.value.packageWeight;
-          common_vendor.index.__f__("log", "at pages/home/phld/phld.vue:322", p1, 123);
+          common_vendor.index.__f__("log", "at pages/home/ldld/ldld.vue:322", p1, 123);
           o[item] = (_a = Math.max(base, p1)) == null ? void 0 : _a.toFixed(2);
         } else {
           const baseP = item == "cg" ? "cg_2-3" : item == "crd" ? "crd_0-10" : "";
@@ -199,7 +199,7 @@ const _sfc_main = {
           }
         }
       });
-      common_vendor.index.__f__("log", "at pages/home/phld/phld.vue:341", o, 1111);
+      common_vendor.index.__f__("log", "at pages/home/ldld/ldld.vue:341", o, 1111);
       return o;
     };
     const formRef = common_vendor.ref(null);
@@ -213,26 +213,26 @@ const _sfc_main = {
         const resO = getRes(obj[0]);
         couriers.value = [
           {
-            name: "陆运货物",
-            icon: "map-pin-ellipse",
-            value: resO.cg
+            name: "京东冷链",
+            icon: "/static/jd.png",
+            value: resO.jdll
           },
           {
-            name: "空运当日达",
-            icon: "paperplane",
-            value: resO.drd
+            name: "顺丰冷链",
+            icon: "/static/sf.png",
+            value: resO.sfll
           },
           {
-            name: "空运次日达",
-            icon: "paperplane-filled",
-            value: resO.crd
+            name: "中通冷链",
+            icon: "/static/zt.png",
+            value: resO.ztll
           }
         ];
       }
     };
     common_vendor.onLoad((param) => {
       type.value = param.type;
-      common_vendor.index.__f__("log", "at pages/home/phld/phld.vue:404", data.data);
+      common_vendor.index.__f__("log", "at pages/home/ldld/ldld.vue:404", data.data);
     });
     function getCityFromAddress(address) {
       const municipalities = ["北京", "上海", "天津", "重庆"];
@@ -295,25 +295,25 @@ const _sfc_main = {
             b: common_vendor.o(common_vendor.m(($event) => form.value.list[index].c = $event.detail.value, {
               number: true
             }), index),
-            c: "1de9f30c-6-" + i0 + ",1de9f30c-5",
+            c: "b5ca930c-6-" + i0 + ",b5ca930c-5",
             d: form.value.list[index].k,
             e: common_vendor.o(common_vendor.m(($event) => form.value.list[index].k = $event.detail.value, {
               number: true
             }), index),
-            f: "1de9f30c-7-" + i0 + ",1de9f30c-5",
+            f: "b5ca930c-7-" + i0 + ",b5ca930c-5",
             g: form.value.list[index].g,
             h: common_vendor.o(common_vendor.m(($event) => form.value.list[index].g = $event.detail.value, {
               number: true
             }), index),
-            i: "1de9f30c-8-" + i0 + ",1de9f30c-5",
+            i: "b5ca930c-8-" + i0 + ",b5ca930c-5",
             j: form.value.list[index].num,
             k: common_vendor.o(common_vendor.m(($event) => form.value.list[index].num = $event.detail.value, {
               number: true
             }), index),
-            l: "1de9f30c-9-" + i0 + ",1de9f30c-5",
+            l: "b5ca930c-9-" + i0 + ",b5ca930c-5",
             m: index > 0
           }, index > 0 ? {
-            n: "1de9f30c-10-" + i0 + ",1de9f30c-5",
+            n: "b5ca930c-10-" + i0 + ",b5ca930c-5",
             o: common_vendor.p({
               type: "clear",
               color: "red",
@@ -352,7 +352,7 @@ const _sfc_main = {
         A: common_vendor.p({
           customStyle: mainBtn
         }),
-        B: common_vendor.sr(formRef, "1de9f30c-0", {
+        B: common_vendor.sr(formRef, "b5ca930c-0", {
           "k": "formRef"
         }),
         C: common_vendor.p({
@@ -363,17 +363,13 @@ const _sfc_main = {
         D: common_vendor.f(couriers.value, (item, index, i0) => {
           return common_vendor.e({
             a: common_vendor.t(item.name),
-            b: "1de9f30c-14-" + i0,
-            c: common_vendor.p({
-              type: item.icon,
-              size: "30"
-            }),
-            d: common_vendor.t(item.value),
-            e: item.sx
+            b: item.icon,
+            c: common_vendor.t(item.value),
+            d: item.sx
           }, item.sx ? {
-            f: common_vendor.t(item.sx)
+            e: common_vendor.t(item.sx)
           } : {}, {
-            g: index
+            f: index
           });
         })
       };
@@ -381,4 +377,4 @@ const _sfc_main = {
   }
 };
 wx.createPage(_sfc_main);
-//# sourceMappingURL=../../../../.sourcemap/mp-weixin/pages/home/phld/phld.js.map
+//# sourceMappingURL=../../../../.sourcemap/mp-weixin/pages/home/ldld/ldld.js.map

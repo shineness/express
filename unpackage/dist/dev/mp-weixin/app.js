@@ -14,6 +14,7 @@ if (!Math) {
   "./pages/home/wljjfa/wljjfa.js";
   "./pages/home/kf/kf.js";
   "./pages/home/phld/phld.js";
+  "./pages/home/ldld/ldld.js";
 }
 const _sfc_main = {
   onLaunch: function() {

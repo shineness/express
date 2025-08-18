@@ -32,10 +32,11 @@ const pagesRoute = () => {
   }
 };
 const makePhoneCall = (e) => {
+  debugger;
   common_vendor.index.makePhoneCall({
-    phoneNumber: "18866211816",
-    success: () => common_vendor.index.__f__("log", "at utils/index.js:40", "拨号成功"),
-    fail: (err) => common_vendor.index.__f__("error", "at utils/index.js:41", "拨号失败:", err)
+    phoneNumber: e || "18866211816",
+    success: () => common_vendor.index.__f__("log", "at utils/index.js:41", "拨号成功"),
+    fail: (err) => common_vendor.index.__f__("error", "at utils/index.js:42", "拨号失败:", err)
   });
 };
 function findValueByRange(inputNumber, rangeObj, str) {

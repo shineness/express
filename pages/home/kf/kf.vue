@@ -3,9 +3,10 @@
 		<image style="margin: auto;" mode="aspectFit" src="/static/bh.jpg"></image>
 		<view class="bottom">
 			
-			<view class="circle" v-for="item,index in arr" @click="clickS(index)">
+			<view class="circle" v-for="item,index in arr" @click="clickS(item)">
 				<view><uv-icon color="#2979ff" :name="item.icon" size="28"></uv-icon></view>
 				<view class="k">{{item.title}}</view>
+				<view class="v">{{item.name}}</view>
 				<view class="v">{{item.value}}</view>
 			</view>
 		</view>
@@ -17,14 +18,13 @@
 
 <script setup>
 	import {makePhoneCall} from '/utils/index.js'
-	const clickS=(index)=>{
-		if (index==2 ){makePhoneCall()}
+	const clickS=(it)=>{
+		makePhoneCall(it.value)
 	}
 	const arr=[
-		{icon:"email-fill",title:"邮箱",value:"123@163.com"},
-		{icon:"qq-fill",title:"QQ",value:"123456789"},
-		{icon:"phone-fill",title:"热线",value:"18866211816"},
-		{icon:"empty-address",title:"地址",value:"山东省青岛市城阳区流亭街道政建物流园B区12号"}
+		
+		{icon:"phone-fill",title:"服务热线",value:"18866274507",name:"樊经理"},
+		{icon:"phone-fill",title:"监督电话",value:"18866211816",name:"任经理"},
 	]
 </script>
 
