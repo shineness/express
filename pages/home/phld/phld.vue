@@ -17,10 +17,10 @@
 
 				<uni-forms-item label="物品重量(kg):" name="packageWeight">
 
-					<input class="picker" v-model="form.packageWeight" type="number" placeholder="请输入物品重量" />
+					<input class="picker" v-model="form.packageWeight" placeholder="请输入物品重量" />
 				</uni-forms-item>
-				<uni-forms-item class="form-item " :label="'物品体积(m³):  '+form.tiji ">
-					<input class="picker" v-model="form.tiji" type="number" placeholder="请输入物品体积 " />
+				<uni-forms-item class="form-item " :label="'物品体积(m³):  '+form.tiji " name="tiji">
+					<input class="picker" v-model="form.tiji" placeholder="请输入物品体积 " />
 				</uni-forms-item>
 
 				<uni-forms-item class="form-item " label="尺寸 " style="border-top: 1px solid #ddd;">
@@ -80,7 +80,7 @@
 			<view class="res">
 				<view class="item" v-for="item,index in couriers" :key="index">
 					<view class="com">{{item.name}}</view>
-					<uni-icons :type="item.icon" size="30" ></uni-icons>
+					<uni-icons :type="item.icon" size="30"></uni-icons>
 					<!-- <image :src="item.icon" style="width: 80rpx;height: 80rpx;margin-top: 20rpx;"></image> -->
 					<view class="mony">¥<text class="number">{{item.value}}</text></view>
 					<view class="sx" v-if="item.sx">预计时效<text class="number">{{item.sx}}</text></view>
@@ -206,28 +206,24 @@
 		},
 		packageWeight: {
 			rules: [{
-				required: true,
-				errorMessage: '请输入物品重量',
-			}]
+					required: true,
+					errorMessage: '请输入物品重量',
+				},
+				{
+				        pattern: /^\d+(\.\d+)?$/, // 匹配整数或小数
+				        errorMessage: '重量必须为数字（整数或小数）',
+				      },
+			]
 		},
 		tiji: {
-			rules: [{
-				required: true,
-				errorMessage: '请输入物品体积',
-			}]
+			rules: [
+				{
+				        pattern: /^\d+(\.\d+)?$/, // 匹配整数或小数
+				        errorMessage: '体积必须为数字（整数或小数）',
+				      },
+			]
 		},
-		// k: {
-		// 	rules: [{
-		// 		required: true,
-		// 		errorMessage: '请输入宽度',
-		// 	}]
-		// },
-		// g: {
-		// 	rules: [{
-		// 		required: true,
-		// 		errorMessage: '请输入高度',
-		// 	}]
-		// },
+		
 
 	})
 	const level1 = ref("")
@@ -312,25 +308,24 @@
 
 	const getRes = (obj) => {
 		let o = {}
-		const maxW = Math.max(parseInt(form.value.packageWeight), form.value.tiji * 200)
+		const maxW = Math.max(parseFloat(form.value.packageWeight), form.value.tiji * 200)
 		//最低价
 		const arr = ['cg', 'drd', 'crd']
 		arr.map((item) => {
 			if (obj[item + '_base']) {
 				const base = obj[item + '_base']
-				const p1 = (findValueByRange(maxW, obj, item + '_') * form.value.packageWeight)
-				console.log(p1,123)
+				const p1 = (findValueByRange(maxW, obj, item + '_') * maxW)
 				o[item] = Math.max(base, p1)?.toFixed(2)
 			} else {
 				const baseP = item == 'cg' ? "cg_2-3" : item == 'crd' ? "crd_0-10" : ""
 				const baseWeight = getMaxFromRangeString(baseP)
 				if (maxW > baseWeight) {
 					const xuzhong = findValueByRange(maxW, obj, item + '_')
-					if(xuzhong){
-						const a = (Math.ceil(form.value.packageWeight - baseWeight) * xuzhong + obj[baseP])
+					if (xuzhong) {
+						const a = (Math.ceil(maxW - baseWeight) * xuzhong + obj[baseP])
 						o[item] = a?.toFixed(2)
-					}else{
-						o[item]="无数据"
+					} else {
+						o[item] = "无数据"
 					}
 				} else {
 					o[item] = findValueByRange(maxW, obj, item + '_')?.toFixed(2)
@@ -368,7 +363,7 @@
 	const submitForm = async () => {
 
 		const res = await formRef.value.validate()
-
+		debugger
 		const obj = data.filter((item) => { //过滤目的地
 			const a = getCityFromAddress(res.recipientAddress)
 

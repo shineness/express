@@ -103,29 +103,27 @@ const _sfc_main = {
         }]
       },
       packageWeight: {
-        rules: [{
-          required: true,
-          errorMessage: "请输入物品重量"
-        }]
+        rules: [
+          {
+            required: true,
+            errorMessage: "请输入物品重量"
+          },
+          {
+            pattern: /^\d+(\.\d+)?$/,
+            // 匹配整数或小数
+            errorMessage: "重量必须为数字（整数或小数）"
+          }
+        ]
       },
       tiji: {
-        rules: [{
-          required: true,
-          errorMessage: "请输入物品体积"
-        }]
+        rules: [
+          {
+            pattern: /^\d+(\.\d+)?$/,
+            // 匹配整数或小数
+            errorMessage: "体积必须为数字（整数或小数）"
+          }
+        ]
       }
-      // k: {
-      // 	rules: [{
-      // 		required: true,
-      // 		errorMessage: '请输入宽度',
-      // 	}]
-      // },
-      // g: {
-      // 	rules: [{
-      // 		required: true,
-      // 		errorMessage: '请输入高度',
-      // 	}]
-      // },
     });
     const level1 = common_vendor.ref("");
     const level2 = common_vendor.ref("");
@@ -159,7 +157,7 @@ const _sfc_main = {
     };
     const couriers = common_vendor.ref([]);
     common_vendor.computed(() => {
-      common_vendor.index.__f__("log", "at pages/home/ldld/ldld.vue:292", form.value.tiji);
+      common_vendor.index.__f__("log", "at pages/home/ldld/ldld.vue:288", form.value.tiji);
       const res = form.value.list.reduce((init, pre) => {
         if (pre) {
           const num = parseFloat(pre);
@@ -174,14 +172,14 @@ const _sfc_main = {
     });
     const getRes = (obj) => {
       let o = {};
-      const maxW = Math.max(parseInt(form.value.packageWeight), form.value.tiji * 333.33);
+      const maxW = Math.max(parseFloat(form.value.packageWeight), form.value.tiji * 333.33);
       const arr = ["sfll", "jdll", "ztll"];
       arr.map((item) => {
         var _a, _b;
         if (obj[item + "_base"]) {
           const base = obj[item + "_base"];
-          const p1 = utils_index.findValueByRange(maxW, obj, item + "_") * form.value.packageWeight;
-          common_vendor.index.__f__("log", "at pages/home/ldld/ldld.vue:322", p1, 123);
+          const p1 = utils_index.findValueByRange(maxW, obj, item + "_") * maxW;
+          common_vendor.index.__f__("log", "at pages/home/ldld/ldld.vue:318", p1, 123);
           o[item] = (_a = Math.max(base, p1)) == null ? void 0 : _a.toFixed(2);
         } else {
           const baseP = item == "cg" ? "cg_2-3" : item == "crd" ? "crd_0-10" : "";
@@ -189,7 +187,7 @@ const _sfc_main = {
           if (maxW > baseWeight) {
             const xuzhong = utils_index.findValueByRange(maxW, obj, item + "_");
             if (xuzhong) {
-              const a = Math.ceil(form.value.packageWeight - baseWeight) * xuzhong + obj[baseP];
+              const a = Math.ceil(maxW - baseWeight) * xuzhong + obj[baseP];
               o[item] = a == null ? void 0 : a.toFixed(2);
             } else {
               o[item] = "无数据";
@@ -199,7 +197,7 @@ const _sfc_main = {
           }
         }
       });
-      common_vendor.index.__f__("log", "at pages/home/ldld/ldld.vue:341", o, 1111);
+      common_vendor.index.__f__("log", "at pages/home/ldld/ldld.vue:337", o, 1111);
       return o;
     };
     const formRef = common_vendor.ref(null);
@@ -232,7 +230,7 @@ const _sfc_main = {
     };
     common_vendor.onLoad((param) => {
       type.value = param.type;
-      common_vendor.index.__f__("log", "at pages/home/ldld/ldld.vue:404", data.data);
+      common_vendor.index.__f__("log", "at pages/home/ldld/ldld.vue:400", data.data);
     });
     function getCityFromAddress(address) {
       const municipalities = ["北京", "上海", "天津", "重庆"];
@@ -287,7 +285,8 @@ const _sfc_main = {
         l: form.value.tiji,
         m: common_vendor.o(($event) => form.value.tiji = $event.detail.value),
         n: common_vendor.p({
-          label: "物品体积(m³):  " + form.value.tiji
+          label: "物品体积(m³):  " + form.value.tiji,
+          name: "tiji"
         }),
         o: common_vendor.f(form.value.list, (item, index, i0) => {
           return common_vendor.e({
